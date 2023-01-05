@@ -4,19 +4,20 @@
     --time-black: #02020a;
     --time-orange: #f79256;
     --time-grey: #e3dfde;
-    
 }
 
 @media (min-width: 768px) {
     html {
-    font-size: 16px;
-  }
+        font-size: 16px;
+    }
 }
+
 @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 95%;
     }
 }
+
 @media (min-width: 2000px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 1920px;
@@ -24,17 +25,17 @@
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,700;1,100&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,300&display=swap');
 
 body {
     margin-bottom: 60px;
     background-color: var(--time-black);
     color: var(--time-grey);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -85,6 +86,20 @@ h1 {
                 clear: both;
             }
 
+.content-body {
+    visibility: hidden;
+    height: 20px;
+    opacity: 0;
+    transition: height 0s 0s, opacity 200ms 0ms;
+}
+
+.content-ingress:hover + div {
+    visibility: visible;
+    height: 100%;
+    opacity: 1;
+    transition: height 1s 1s, opacity 200ms 200ms;
+}
+
 .content {
     padding-bottom: 0;
     background-color: var(--time-blue);
@@ -94,22 +109,19 @@ h1 {
     text-align: justify;
 }
 
-.content-body {
-    margin: 0;
-    padding: 12px;
-}
-
 .content-div {
-    padding: 2px 12px;
-    display: flex; 
+    padding: 2px 0 6px 12px;
+    display: flex;
+    text-align: left;
 }
-.content-div i {
-    padding-top: 3px;
- }
 
-.content-div p  {
-    padding: 0 0 0 4px!important;
-}
+    .content-div i {
+        padding-top: 3px;
+    }
+
+    .content-div p {
+        padding: 0 0 0 4px !important;
+    }
 
 
 .timeline ul li:nth-child(odd):before {
