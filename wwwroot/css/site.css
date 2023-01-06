@@ -124,6 +124,11 @@ h1 {
         padding: 0 0 0 4px !important;
     }
 
+.content-header-img {
+    float: right;
+    width: 35px;
+    mix-blend-mode: multiply;
+}
 
 .timeline ul li:nth-child(odd):before {
     content: '';
@@ -165,7 +170,7 @@ h1 {
 
 .timeline ul li .time h4 {
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 10px;
     font-size: 14px;
     font-weight: 600;
     text-align: center;
@@ -182,6 +187,7 @@ h1 {
     color: var(--time-black);
     border-radius: 6px;
     box-shadow: 0 0 3px 3px var(--time-blue);
+    display: flex;
 }
 
 .timeline ul li:nth-child(even) .time {
@@ -195,6 +201,8 @@ h1 {
     color: #000;
     border-radius: 6px;
     box-shadow: 0 0 3px 3px var(--time-blue);
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @media(max-width:2000px) {
