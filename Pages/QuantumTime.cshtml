@@ -1,0 +1,56 @@
+﻿@page
+@model QuantumTimeModel
+@{
+    var vals = "{";
+    foreach (var Person in Model.Persons)
+    {
+        vals += @Person.Code + ":" + @Person.FullName + ",";
+    }
+    vals += "}";
+}
+
+<div class="text-center">
+    <h1>Om kvantemekanikk og andre oppdagelser</h1>
+    <div class="timeline">
+        <ul>
+            @foreach (var Event in Model.Events.OrderBy(x => x.Time))
+        {
+                var etype = "fa-user";  //personal
+                switch(Event.Type)
+                {
+                    case "discovery":
+                        etype = "fa-lightbulb";
+                        break;
+                    default:
+                        break;
+                }
+                var p = "";
+                @foreach(var pcode in Event.PersonCodes.Split(" "))
+                {
+                    //xx = Model.Persons.Where(x => x.Code.Contains(pcode)).ToString();
+                    //var value = Model.Persons.Where(item => item.Code == pcode).FullName;
+                    p += "<img class=\"content-header-img\" alt=\"Albert Einstein\" title=\"Albert Einstein\" src=\"/img/" + pcode + ".png\" />";
+                }
+
+
+                <li class="@Event.PersonCodes">
+                    <div class="content" id="ev_@Event.Id">
+                        <h3>@Event.Title @Html.Raw(p)</h3>
+                        <p class="content-ingress">
+                            @Html.Raw(Event.Ingress)
+                        </p>
+                        <div class="content-body">
+                            @Html.Raw(Event.Body)
+                        </div>
+                    </div>
+                    <div class="time">
+                        <i class="fa-regular @etype"></i>
+                        <h4>@Event.DisplayTime</h4>
+                    </div>
+                </li>
+
+        }
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>

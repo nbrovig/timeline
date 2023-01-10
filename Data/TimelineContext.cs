@@ -54,7 +54,7 @@ namespace timeline.Data
                     DisplayTime = "1935 - 15. mai",
                     Time = DateTime.Parse("1935-05-15"),
                     Type = "discovery",
-                    PersonCodes = "ae1,bp1,nr1"
+                    PersonCodes = "ae1 bp1 nr1"
                 };
                 Events.Add(e);
 
