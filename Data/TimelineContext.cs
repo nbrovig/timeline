@@ -8,29 +8,32 @@ namespace timeline.Data
     {
         public TimelineContext(DbContextOptions<TimelineContext> options) : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Event> Events { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Person>().ToTable("Persons");
+            modelBuilder.Entity<Event>().ToTable("Events");
+        }
 
         public void SeedData()
         {
             if (!Persons.Any())
             {
-                var p = new Person { PersonId = 1, FullName = "Albert Einstein", Code = "ae1" };
+                var p = new Person { FullName = "Albert Einstein", Code = "ae1" };
                 Persons.Add(p);
-                p = new Person { PersonId = 2, FullName = "Nathan Rosen", Code = "nr1" };
+                p = new Person { FullName = "Nathan Rosen", Code = "nr1" };
                 Persons.Add(p);
-                p = new Person { PersonId = 3, FullName = "Boris Podolsky", Code = "bp1" };
+                p = new Person { FullName = "Boris Podolsky", Code = "bp1" };
                 Persons.Add(p);
                 SaveChanges();
             }
 
             if (!Events.Any())
             {
-                //var pIds = new List<int> { 1, 2, 3 };
-                var pcs = new List<string> { "ae1" };
-                //var ps = Persons.Where(s => pIds.Contains(s.PersonId)).ToList();
-                var pc = Persons.Where(s => pcs.Contains(s.Code)).ToList();
                 var e = new Event
                 {
                     Title = "Albert Einstein blir født 14. mars 1879",
@@ -39,12 +42,10 @@ namespace timeline.Data
                     DisplayTime = "1879 - 14. mars",
                     Time = DateTime.Parse("1879-03-14"),
                     Type = "personal",
-                    Persons = pc
+                    PersonCodes = "ae1"
                 };
                 Events.Add(e);
 
-                pcs = new List<string> { "ae1", "bp1", "nr1" };
-                pc = Persons.Where(s => pcs.Contains(s.Code)).ToList();
                 e = new Event
                 {
                     Title = "Kvantekorrelasjon",
@@ -53,7 +54,19 @@ namespace timeline.Data
                     DisplayTime = "1935 - 15. mai",
                     Time = DateTime.Parse("1935-05-15"),
                     Type = "discovery",
-                    Persons = pc
+                    PersonCodes = "ae1,bp1,nr1"
+                };
+                Events.Add(e);
+
+                e = new Event
+                {
+                    Title = "Einsteins \"Annus mirabilis\"",
+                    Ingress = "I 1905 publiserte Albert Einstein flere artikler som skulle vise seg å ha stor betydning for fysikken og for vår forståelse av universet. Artiklene ble publisert i det tyske vitenskapelige tidsskriftet \"Annalen der Physik\".",
+                    Body = "<div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Eine neue Bestimmung der Moleküldimensionen\"<br>(En ny bestemmelse av molekyldimensjonene).<br>Der Einstein foreslo en ny metode for å bestemme størrelsen på molekyler ved å bruke Brownsk bevegelse. Publisert 30. mai 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Zur Elektrodynamik bewegter Körper\"<br>(Om elektrodynamikken for bevegelige kropper).<br>Der Einstein foreslo den såkalte spesielle relativitetsteorien, som innebærer at tid og rom er relativt og at lys alltid reiser med samme hastighet uavhengig av hvor man befinner seg i universet. Publisert 30. juni 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Eine Theorie der Photochemischen Reaktionen\"<br>(En teori om fotokjemiske reaksjoner).<br>Der Einstein viste at lys kan overføre energi til kjemiske reaksjoner, noe som senere ble bekreftet av eksperimenter. Publisert 6. september 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt\"<br>(Om en heuristisk betraktning som gjelder generering og forvandling av lys).<br>Der Einstein foreslo at lys kan oppfattes både som partikler og som bølger, som senere ble bekreftet av eksperimenter. Publisert 17. december 1905.</p></div>",
+                    DisplayTime = "1905 - mai til desember",
+                    Time = DateTime.Parse("1905-05-30"),
+                    Type = "discovery",
+                    PersonCodes = "ae1"
                 };
                 Events.Add(e);
 

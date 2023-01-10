@@ -1,4 +1,6 @@
-﻿namespace timeline.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace timeline.Models
 {
     public class Event
     {
@@ -9,6 +11,6 @@
         public string Type { get; set; } = string.Empty;
         public DateTime Time { get; set; }
         public string DisplayTime { get; set; } = string.Empty;
-        public List<Person>? Persons { get; set; }
+        public string PersonCodes { get; set; } = string.Empty;
     }
 }

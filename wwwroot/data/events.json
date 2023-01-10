@@ -4,9 +4,7 @@
       "id": 1,
       "time": "1879-03-14T00:00:00.000Z",
       "type": "personal",
-      "persons": [
-        "ae1"
-      ],
+      "personcode": "ae1",
       "title": "Albert Einstein blir født 14. mars 1879",
       "ingress": "Albert Einstein blir født 14. mars 1879 i en jødisk familie i Tyskland.<br />Han ble født i byen Ulm i Kongeriket Württemberg som var en stat i det tyske keiserriket.",
       "body": "Allerede året etter i 1880 flyttet familien til München, hvor faren Hermann Einstein og onkelen grunnla produksjon av elektriske apparater basert på likestrøm \"Elektrotechnische Fabrik J. Einstein & Cie\".<br />Gjennom faren ble han interessert i både elektromagnetisme og mekanikk.",
@@ -16,11 +14,7 @@
       "id": 2,
       "time": "1935-05-15T00:00:00.000Z",
       "type": "discovery",
-      "persons": [
-        "ae1",
-        "bp1",
-        "nr1"
-      ],
+      "personcode": "ae1,bp1,nr1",
       "title": "Kvantekorrelasjon",
       "ingress": "Et fenomen som beskriver hvordan subatomiske partikler, som elektroner, kan påvirke hverandre på avstand uten å måtte sende noe form for signal eller energi.",
       "body": "Dette fenomenet ble først beskrevet av Albert Einstein, Boris Podolsky og Nathan Rosen i en artikkel fra 1935 som ble kjent som \"Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?\" (Kan kvantemekanisk beskrivelse av fysisk virkelighet anses som fullstendig?).<br /><br />I denne artikkelen argumenterer de for at kvantemekanikken, som er teorien som beskriver hvordan subatomiske partikler oppfører seg, ikke kan være fullstendig uten å ta hensyn til kvantekorrelasjonen.<br />De hevdet at kvantemekanikken måtte kompletteres med en teori som forklarer hvordan subatomiske partikler påvirker hverandre på avstand.",
@@ -30,9 +24,7 @@
       "id": 3,
       "time": "1905-05-01T00:00:00.000Z",
       "type": "discovery",
-      "persons": [
-        "ae1"
-      ],
+      "personcode": "ae1",
       "title": "Einsteins \"Annus mirabilis\"",
       "ingress": "I 1905 publiserte Albert Einstein flere artikler som skulle vise seg å ha stor betydning for fysikken og for vår forståelse av universet. Artiklene ble publisert i det tyske vitenskapelige tidsskriftet \"Annalen der Physik\".",
       "body": "<div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Eine neue Bestimmung der Moleküldimensionen\"<br>(En ny bestemmelse av molekyldimensjonene).<br>Der Einstein foreslo en ny metode for å bestemme størrelsen på molekyler ved å bruke Brownsk bevegelse. Publisert 30. mai 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Zur Elektrodynamik bewegter Körper\"<br>(Om elektrodynamikken for bevegelige kropper).<br>Der Einstein foreslo den såkalte spesielle relativitetsteorien, som innebærer at tid og rom er relativt og at lys alltid reiser med samme hastighet uavhengig av hvor man befinner seg i universet. Publisert 30. juni 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Eine Theorie der Photochemischen Reaktionen\"<br>(En teori om fotokjemiske reaksjoner).<br>Der Einstein viste at lys kan overføre energi til kjemiske reaksjoner, noe som senere ble bekreftet av eksperimenter. Publisert 6. september 1905.</p></div><div class='content-div'><i class='fa-regular fa-file-lines' aria-hidden='true'></i><p>\"Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt\"<br>(Om en heuristisk betraktning som gjelder generering og forvandling av lys).<br>Der Einstein foreslo at lys kan oppfattes både som partikler og som bølger, som senere ble bekreftet av eksperimenter. Publisert 17. december 1905.</p></div>",
